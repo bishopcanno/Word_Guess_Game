@@ -10,7 +10,6 @@ var alphabet = genCharArray('a', 'z');
 var wins = 0;
 var losses = 0;
 var remainingGuessCount = 5;
-var guesses = [];
 
 document.onkeypress = function(event) {
     var guessRecordDiv = document.querySelector('#guessRecord');
@@ -31,10 +30,7 @@ document.onkeypress = function(event) {
             if (remainingGuessCount === 0){
                 losses++;
                 reset = true;
-            } else {
-                guesses.push(userGuess);
-            }
-                
+            }                
         }
 
         if (reset) {
@@ -43,16 +39,16 @@ document.onkeypress = function(event) {
             }
             remainingGuessCount = 5;
         } else {
-            var p = document.createElement('p');
-            p.innerHTML = userGuess;
-            guessRecordDiv.appendChild(p);
+            var lastGuessSpan = document.querySelector('#last-guess');
+            lastGuessSpan.innerHTML = userGuess;
+            guessRecordDiv.appendChild(lastGuessSpan);
         }
 
         var htmlScore = "<h3>Wins: " + wins + "</h3>" +
             "<h3>Losses: " + losses + "</h3>" +
             "<h3>Guesses left: " + remainingGuessCount + "</h3>" + 
-            "<h3>Past guesses:</h3>";
+            "<h3>Past guesses:<span id = 'last-guess'></span></h3>";
 
-        document.querySelector("#scoreBoard").innerHTML = htmlScore;
+            document.querySelector("#scoreBoard").innerHTML = htmlScore;
     }
 };

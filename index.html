@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Psychic_Guess_Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     
 </head>
 <body>
-    <h1>The Psychic Game</h1>
-    <h2>Directions:</h2>
-        <ol>
-            <li>Press any letter key to begin</li>
-            <li>You have 5 guesses to get it correctly</li>
-            <li>Upon winning or lossing the game will reset</li>
-        </ol>
-    <div id="scoreBoard"></div>
-    <div id="guessRecord"></div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <h1>The Psychic Game</h1>
+            
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col s6 offset-s5">
+            <h2>Directions:</h2>
+            <ol>
+                <li>Press any letter key to begin</li>
+                <li>You have 5 guesses to get it correctly</li>
+                <li>Upon winning or lossing the game will reset</li>
+            </ol>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="col s12 center-align">
+            <div id="scoreBoard"></div>
+            <div id="guessRecord"></div>
+        </div>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/game.js"></script>
-    <!-- <script src="./assets/origGame.js"></script> --> 
-    <!-- the script link above that is commented out is the one i came up with, without help -->
+
 </body>
 </html>
